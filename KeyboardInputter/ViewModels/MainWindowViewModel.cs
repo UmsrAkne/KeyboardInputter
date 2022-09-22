@@ -1,8 +1,8 @@
-﻿using KeyboardInputter.Models;
+﻿using System;
+using System.Timers;
+using KeyboardInputter.Models;
 using Prism.Commands;
 using Prism.Mvvm;
-using System;
-using System.Timers;
 
 namespace KeyboardInputter.ViewModels
 {
@@ -10,12 +10,6 @@ namespace KeyboardInputter.ViewModels
     {
         private KeySender keySender = new KeySender();
         private string title = "Prism Application";
-
-        public string Title
-        {
-            get => title;
-            set => SetProperty(ref title, value);
-        }
 
         public MainWindowViewModel()
         {
@@ -27,6 +21,12 @@ namespace KeyboardInputter.ViewModels
             {
                 System.Diagnostics.Debug.WriteLine($"MainWindowViewModel : inputKey");
             };
+        }
+
+        public string Title
+        {
+            get => title;
+            set => SetProperty(ref title, value);
         }
 
         public DelegateCommand KeyCommand => new DelegateCommand(() =>

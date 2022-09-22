@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KeyboardInputter.Models
 {
@@ -11,8 +7,8 @@ namespace KeyboardInputter.Models
     [StructLayout(LayoutKind.Sequential)]
     public struct Win32Point
     {
-        public Int32 X;
-        public Int32 Y;
+        public int X;
+        public int Y;
     };
 
     [StructLayout(LayoutKind.Sequential)]
@@ -62,7 +58,6 @@ namespace KeyboardInputter.Models
 
     public static class NativeMethods
     {
-
         // 定数の定義
 
         public const int INPUT_MOUSE = 0;
@@ -85,7 +80,6 @@ namespace KeyboardInputter.Models
         public const int KEYEVENTF_EXTENDEDKEY = 0x1;
 
         // APIの読み込み
-
         [DllImport("user32.dll")]
         public static extern void SendInput(int nInputs, ref INPUT pInputs, int cbsize);
 
