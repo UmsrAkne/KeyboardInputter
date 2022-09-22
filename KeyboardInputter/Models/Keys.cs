@@ -74,8 +74,4 @@ public enum Keys
     Home = 36,
     End = 35,
     Escape = 27,
-
-    LControlKey = 162,
-    LShiftKey = 160,
-    LAlt = 164,
 }

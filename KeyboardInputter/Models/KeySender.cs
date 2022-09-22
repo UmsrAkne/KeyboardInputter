@@ -5,8 +5,10 @@ using System.Runtime.InteropServices;
 
 public class KeySender
 {
-    public void SendKey(short keyCode)
+    public void SendKey(Keys key)
     {
+        var keyCode = (short)key;
+
         var inputs = new[]
         {
             new INPUT
@@ -44,8 +46,11 @@ public class KeySender
         NativeMethods.SendInput(2, ref inputs[0], Marshal.SizeOf(inputs[0]));
     }
 
-    public void SendKey(short keyCode, short modifierKeyCode)
+    public void SendKey(Keys key, ModifierKeys modifierKey)
     {
+        var keyCode = (short)key;
+        var modifierKeyCode = (short)modifierKey;
+
         var inputs = new[]
         {
             new INPUT
@@ -112,6 +117,4 @@ public class KeySender
 
         NativeMethods.SendInput(4, ref inputs[0], Marshal.SizeOf(inputs[0]));
     }
-
-
 }

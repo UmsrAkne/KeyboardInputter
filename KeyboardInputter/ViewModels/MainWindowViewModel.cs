@@ -8,7 +8,7 @@ namespace KeyboardInputter.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private KeySender keySender = new KeySender();
+        private readonly KeySender keySender = new KeySender();
         private string title = "Prism Application";
 
         public MainWindowViewModel()
@@ -20,7 +20,7 @@ namespace KeyboardInputter.ViewModels
             timer.Elapsed += (_, _) =>
             {
                 System.Diagnostics.Debug.WriteLine($"MainWindowViewModel : inputKey");
-                keySender.SendKey((int)Keys.A, (int)Keys.LControlKey);
+                keySender.SendKey(Keys.A, ModifierKeys.LControlKey);
             };
         }
 
