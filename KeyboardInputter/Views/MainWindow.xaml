@@ -33,7 +33,7 @@
                 Grid.Row="0"
                 Margin="5,0"
                 Text="命令一覧" />
-            <ListView Grid.Row="1" />
+            <ListView Grid.Row="1" ItemsSource="{Binding OperationNames}" />
         </Grid>
 
         <Grid Grid.Column="1">
