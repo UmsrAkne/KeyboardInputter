@@ -20,7 +20,6 @@ namespace KeyboardInputter.ViewModels
             timer.Elapsed += (_, _) =>
             {
                 System.Diagnostics.Debug.WriteLine($"MainWindowViewModel : inputKey");
-                keySender.SendKey(Keys.A, ModifierKeys.LControlKey);
             };
         }
 
